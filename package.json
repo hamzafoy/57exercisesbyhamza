@@ -1,0 +1,23 @@
+{
+  "name": "exercises_for_programmers_57",
+  "version": "1.0.0",
+  "description": "Small application showcasing solutions to the 57 exercises in the book by Brian P. Hogan",
+  "main": "script.js",
+  "dependencies": {
+    "xterm": "^4.18.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hamzafoy/57exercisesbyhamza.git"
+  },
+  "author": "Hamza Foy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hamzafoy/57exercisesbyhamza/issues"
+  },
+  "homepage": "https://github.com/hamzafoy/57exercisesbyhamza#readme"
+}
