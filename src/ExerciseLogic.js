@@ -1,7 +1,6 @@
 const exercisesObject = {
-    renderGreeting: function () {
-      let inquiry = prompt(`What is your name?`);
-      let greeting = `Hello ${inquiry}, how are you?`;
+    renderGreeting: function (input) {
+      let greeting = `Hello ${input}, how are you?`;
       return greeting;
     }
 };
