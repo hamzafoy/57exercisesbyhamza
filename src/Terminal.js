@@ -16,6 +16,13 @@ class Terminal extends React.Component {
 
     componentDidMount() {
         this.xtermRef.current.terminal.writeln("Terminal Booted. . .");
+        this.xtermRef.current.terminal.writeln(
+            `Enter the following shorthands to read exercise prompts and
+            \rsee my solution:\n\r`
+          );
+          this.xtermRef.current.terminal.writeln(
+            "HLOWRLD :: A function that takes a user's name and prints a greeting"
+          );
         this.xtermRef.current.terminal.write("Echo> ");
     }
 
@@ -27,6 +34,7 @@ class Terminal extends React.Component {
                     ref={this.xtermRef}
                     options={{ cursorBlink: true }}
                     onData={(data) => {
+                        prompt("Test");
                         const code = data.charCodeAt(0);
                         // If the user hits empty and there is something typed echo it.
                         if (code === 13 && this.state.input.length > 0) {
