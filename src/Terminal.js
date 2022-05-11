@@ -40,7 +40,7 @@ class Terminal extends React.Component {
                         // If the user hits empty and there is something typed echo it.
                         if (code === 13 && this.state.input.length > 0) {
                         this.xtermRef.current.terminal.write(
-                            `\r\n\n\r`
+                            `\r\n`
                         );
                         switch (this.state.input) {
                             case "LANG":
