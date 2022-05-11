@@ -43,9 +43,11 @@ class Terminal extends React.Component {
                         );
                         switch (this.state.input) {
                             case "HLOWRLD":
-                            let greet = exercisesObject.renderGreeting();
-                            this.xtermRef.current.terminal.writeln(`${greet}`);
-                            break;
+                                this.setState({ input: "" });
+                                this.xtermRef.current.terminal.write("Write your name: ");
+                                let greet = prompt("Enter your name");
+                                this.xtermRef.current.terminal.writeln(exercisesObject.renderGreeting(greet));
+                                break;
                         }
                         this.xtermRef.current.terminal.write("User Input: ");
                         this.setState({ input: "" });
