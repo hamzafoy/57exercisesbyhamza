@@ -10,7 +10,7 @@ class Terminal extends React.Component {
         this.xtermRef = React.createRef();
 
         this.state = {
-            userInput: ""
+            input: ""
         }
     }
 
