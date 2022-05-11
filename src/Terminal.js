@@ -18,14 +18,14 @@ class Terminal extends React.Component {
     componentDidMount() {
         this.xtermRef.current.terminal.writeln("Terminal Booted. . .");
         this.xtermRef.current.terminal.writeln(
-            `Enter the following shorthands to read exercise prompts and
-            \rsee my solution:\n\r`
+            `Enter the following shorthands to read exercise prompts and see my solution:\n\r`
           );
           this.xtermRef.current.terminal.writeln(
             `LANG :: Set language of the terminal.
-            \rHLOWRLD :: A function that takes a user's name and prints a greeting.`
+            \rHLOWRLD :: A function that takes a user's name and prints a greeting.
+            \r\n`
           );
-        this.xtermRef.current.terminal.write("Echo> ");
+        this.xtermRef.current.terminal.write("User Input: ");
     }
 
     render() {
@@ -40,7 +40,7 @@ class Terminal extends React.Component {
                         // If the user hits empty and there is something typed echo it.
                         if (code === 13 && this.state.input.length > 0) {
                         this.xtermRef.current.terminal.write(
-                            `\r\nYour entry: ${this.state.input}\n\r`
+                            `\r\n\n\r`
                         );
                         switch (this.state.input) {
                             case "LANG":
