@@ -10,7 +10,8 @@ class Terminal extends React.Component {
         this.xtermRef = React.createRef();
 
         this.state = {
-            input: ""
+            input: "",
+            lang: "ENGLISH"
         }
     }
 
@@ -21,7 +22,7 @@ class Terminal extends React.Component {
             \rsee my solution:\n\r`
           );
           this.xtermRef.current.terminal.writeln(
-            "HLOWRLD :: A function that takes a user's name and prints a greeting"
+            "HLOWRLD :: A function that takes a user's name and prints a greeting\n\r"
           );
         this.xtermRef.current.terminal.write("Echo> ");
     }
@@ -41,6 +42,12 @@ class Terminal extends React.Component {
                             `\r\nYour entry: ${this.state.input}\n\r`
                         );
                         switch (this.state.input) {
+                            case "LANG":
+                                let choice = prompt(
+                                    "Select a language: ARABIC, ENGLISH, FRENCH, SOMALI, or SPANISH"
+                                );
+                                this.setState({ lang: choice });
+                                break;
                             case "HLOWRLD":
                                 this.setState({ input: "" });
                                 this.xtermRef.current.terminal.write("Write your name: ");
