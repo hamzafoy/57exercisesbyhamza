@@ -1,10 +1,11 @@
 import './App.css';
-import { XTerm } from 'xterm-for-react'
+import Terminal from './Terminal';
+
 
 function App() {
   return (
     <div className="App">
-     <XTerm />
+     <Terminal/>
     </div>
   );
 }
