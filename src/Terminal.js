@@ -22,7 +22,8 @@ class Terminal extends React.Component {
             \rsee my solution:\n\r`
           );
           this.xtermRef.current.terminal.writeln(
-            "HLOWRLD :: A function that takes a user's name and prints a greeting\n\r"
+            `LANG :: Set language of the terminal.
+            \rHLOWRLD :: A function that takes a user's name and prints a greeting.`
           );
         this.xtermRef.current.terminal.write("Echo> ");
     }
@@ -52,7 +53,7 @@ class Terminal extends React.Component {
                                 this.setState({ input: "" });
                                 this.xtermRef.current.terminal.write("Write your name: ");
                                 let greet = prompt("Enter your name");
-                                this.xtermRef.current.terminal.writeln(exercisesObject.renderGreeting(greet));
+                                this.xtermRef.current.terminal.writeln(exercisesObject.renderGreeting(greet, this.state.lang));
                                 break;
                         }
                         this.xtermRef.current.terminal.write("User Input: ");
