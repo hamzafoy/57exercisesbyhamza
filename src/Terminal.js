@@ -23,7 +23,7 @@ class Terminal extends React.Component {
           this.xtermRef.current.terminal.writeln(
             `LANG :: Set language of the terminal.
             \rHLOWRLD :: A function that takes a user's name and prints a greeting.
-            \r\n`
+            \r`
           );
         this.xtermRef.current.terminal.write("User Input: ");
     }
