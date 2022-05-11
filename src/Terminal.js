@@ -34,7 +34,6 @@ class Terminal extends React.Component {
                     ref={this.xtermRef}
                     options={{ cursorBlink: true }}
                     onData={(data) => {
-                        prompt("Test");
                         const code = data.charCodeAt(0);
                         // If the user hits empty and there is something typed echo it.
                         if (code === 13 && this.state.input.length > 0) {
