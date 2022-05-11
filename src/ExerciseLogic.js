@@ -11,6 +11,9 @@ const exercisesObject = {
   
       let greeting = `${input}, ${greetInYourLanguage}`;
       return greeting;
+    },
+    countingCharacters: function (string) {
+      return `${string} has ${string.split("").length} characters.`;
     }
   };
   

@@ -23,6 +23,7 @@ class Terminal extends React.Component {
           this.xtermRef.current.terminal.writeln(
             `LANG :: Set language of the terminal.
             \rHLOWRLD :: A function that takes a user's name and prints a greeting.
+            \rCNTCHAR :: A function that takes a word & counts its characters.
             \r`
           );
         this.xtermRef.current.terminal.write("User Input: ");
@@ -49,9 +50,20 @@ class Terminal extends React.Component {
                                 );
                                 this.setState({ lang: choice });
                                 break;
+                            case "CNTCHAR":
+                                this.xtermRef.current.terminal.write("COUNT THE CHARACTERS: ")
+                                let chosenWord = prompt("Enter a single word");
+                                if(chosenWord.length == 0) {
+                                    this.xtermRef.current.terminal.writeln("There are no characters where there is no word. . .")
+                                } else {
+                                this.xtermRef.current.terminal.writeln(
+                                    exercisesObject.countingCharacters(chosenWord)
+                                );
+                                }
+                                break;
                             case "HLOWRLD":
                                 this.setState({ input: "" });
-                                this.xtermRef.current.terminal.write("Write your name: ");
+                                this.xtermRef.current.terminal.write("Program Greeting: ");
                                 let greet = prompt("Enter your name");
                                 this.xtermRef.current.terminal.writeln(exercisesObject.renderGreeting(greet, this.state.lang));
                                 break;
